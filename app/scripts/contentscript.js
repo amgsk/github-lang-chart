@@ -19,10 +19,22 @@ function displayChart(repos) {
         ]
       },
       animation : {
-        animateScale: true
+        animateScale : true
       },
       options : {
-        responsive: true,
+        responsive : true,
+        onClick : function(event, legendItem) {
+          if (legendItem && legendItem.length > 0) {
+            var author = util.getTargetName();
+            var clickedLabel = legendItem[0]._model.label.toLowerCase();
+
+            var url = `https://github.com/${author}?utf8=%E2%9C%93&tab=repositories`;
+            if (clickedLabel !== 'others') {
+              url += `&q=&type=&language=${clickedLabel}`;
+            }
+            window.location.href = url;
+          }
+        }
       }
     });
   }
