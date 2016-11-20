@@ -8,10 +8,10 @@ var util = function() {
       return /^https:\/\/github.com\/[a-zA-Z0-9\-]+$/.test(window.location.href);
     },
     isAuthorPage : function() {
-      return this.isTargetPage() && authorNameSelector !== null;
+      return this.isChartTargetPage() && authorNameSelector !== null;
     },
     isOrganizationPage : function() {
-      return this.isTargetPage() && organizationSelector !== null;
+      return this.isChartTargetPage() && organizationSelector !== null;
     },
     getTargetName : function() {
       return window.location.pathname.replace(/\//g,'')
