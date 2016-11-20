@@ -80,7 +80,7 @@ function createCanvasWithRelationalElements() {
 
 function init () {
 
-  chrome.storage.local.get('githubToken', function (data) {
+  chrome.storage.local.get('github_lang_chart', function (data) {
 
     var token = data && data.githubToken ? data.githubToken : null;
 
