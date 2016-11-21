@@ -1,4 +1,4 @@
-var GithubApi = require('./GithubApi');
+var GitHubApi = require('./GitHubApi');
 var util = require('./util');
 var LanguageModel = require('./LanguageModel');
 
@@ -80,11 +80,11 @@ function createCanvasWithRelationalElements() {
 
 function init () {
 
-  chrome.storage.local.get('github_lang_chart', function (data) {
+  chrome.storage.local.get('GitHubLangChartToken', function (data) {
 
-    var token = data && data.githubToken ? data.githubToken : null;
+    var token = data && data.GitHubLangChartToken ? data.GitHubLangChartToken : null;
 
-    GithubApi.getAuthorRepositories(token, util.getTargetName())
+    GitHubApi.getAuthorRepositories(token, util.getTargetName())
       .then(function (repos) {
         var author_repositories = Array.prototype.concat.apply([], repos);
         displayChart(author_repositories);
