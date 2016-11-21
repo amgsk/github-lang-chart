@@ -2,10 +2,7 @@ var token = document.getElementById('token');
 var saveButton = document.getElementById('save');
 
 chrome.storage.local.get('GitHubLangChartToken', function (data) {
-  var saved_token = data && data.GitHubLangChartToken || null;
-  if (saved_token) {
-    token.value = saved_token;
-  }
+  token.value = data.GitHubLangChartToken || '';
 });
 
 saveButton.addEventListener('click', function() {
