@@ -1,3 +1,6 @@
+'use strict';
+
+var Storage = require('./Storage');
 var GitHubApi = require('./GitHubApi');
 var util = require('./util');
 var LanguageModel = require('./LanguageModel');
@@ -57,7 +60,6 @@ function createCanvasWithRelationalElements() {
   chartOuterDiv.appendChild(canvas);
   divWrapper.appendChild(chartOuterDiv);
 
-
   if (util.isAuthorPage()) {
     var target = document.querySelector('.js-contribution-graph');
     target.parentElement.insertBefore(divWrapper, target);
@@ -80,9 +82,9 @@ function createCanvasWithRelationalElements() {
 
 function init () {
 
-  chrome.storage.local.get('GitHubLangChartToken', function (data) {
+  Storage.get(['GitHubLangChartToken']).then(function(items) {
 
-    var token = data && data.GitHubLangChartToken ? data.GitHubLangChartToken : null;
+    var token = items && items.GitHubLangChartToken ? items.GitHubLangChartToken : null;
 
     GitHubApi.getAuthorRepositories(token, util.getTargetName())
       .then(function (repos) {
