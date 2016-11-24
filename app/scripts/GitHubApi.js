@@ -7,6 +7,7 @@ module.exports = function() {
       req.open('GET', `https://api.github.com${path}`, true);
       req.setRequestHeader('Accept','application/vnd.github.v3.raw+json');
       req.setRequestHeader('Content-Type','application/json;charset=UTF-8');
+      req.setRequestHeader('User-Agent', 'github-lang-chart');
 
       if (token) {
         req.setRequestHeader('Authorization', `token ${token}`);
