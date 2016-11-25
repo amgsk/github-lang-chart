@@ -7,7 +7,6 @@ module.exports = function() {
       req.open('GET', `https://api.github.com${path}`, true);
       req.setRequestHeader('Accept','application/vnd.github.v3.raw+json');
       req.setRequestHeader('Content-Type','application/json;charset=UTF-8');
-      req.setRequestHeader('User-Agent', 'github-lang-chart');
 
       if (token) {
         req.setRequestHeader('Authorization', `token ${token}`);
@@ -17,11 +16,11 @@ module.exports = function() {
         if( this.readyState === 4 && this.status === 200) {
           resolve(JSON.parse(this.responseText));
         }
-      }
+      };
       req.onerror = function () {
         reject(new Error(req.statusText));
       };
-      req.send();
+      req.send(data);
     });
   };
 
@@ -40,8 +39,7 @@ module.exports = function() {
         }
 
         function recordValue(results, value) {
-          var results = Array.prototype.concat.apply(results, value);
-          return results;
+          return Array.prototype.concat.apply(results, value);
         }
         var pushValue = recordValue.bind(null, []);
 
