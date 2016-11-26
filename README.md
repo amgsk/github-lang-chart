@@ -11,9 +11,9 @@ The chart is displayed on the author's top page and is colored by language.
 
 ![Chart](http://i.imgur.com/JVQpFWI.jpg "Chart")
 
-**Chart2 : The language ratio used in all repositories.**
+**Chart2 : Display the top 10 repositories of the author's repository.**
 
-This is a repository language chart sorted in descending order of the number of stars.
+This is a repository language chart sorted in descending order of the number of stars.  
 *There is a mosaic in the image.*
 
 ![Chart](http://i.imgur.com/izuUkPV.jpg "Chart")
