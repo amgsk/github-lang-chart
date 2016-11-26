@@ -43,13 +43,13 @@ var LanguageChart = function() {
   }
 
   return {
-    displayChart : function(repos) {
+    displayChart : function(chartType, repos) {
       var model = new LanguageModel(repos);
 
       var canvas = _createCanvasWithRelationalElements();
       if (canvas) {
         new Chart(canvas, {
-          type: 'doughnut',
+          type: chartType,
           data: {
             labels: model.languages,
             datasets: [
