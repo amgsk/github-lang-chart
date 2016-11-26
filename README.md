@@ -14,9 +14,16 @@ The chart is displayed on the author's top page and is colored by language.
 **Chart2 : Display the top 10 repositories of the author's repository.**
 
 This is a repository language chart sorted in descending order of the number of stars.  
+When this function is enabled, 10 requests are required and the access restriction may become faster.  
+
 *There is a mosaic in the image.*
 
 ![Chart](http://i.imgur.com/izuUkPV.jpg "Chart")
+
+This function is OFF by default.  
+To enable it, turn on the check on the setting page.
+
+![Chart](http://i.imgur.com/gsDQG59.jpg "Chart")
 
 Issues
 ------
