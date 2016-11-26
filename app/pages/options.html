@@ -7,20 +7,32 @@
 </head>
 <body>
 
-  <label>
-    GitHub Access Token:
-    <input type="text" id="token">
-  </label>
+  <p>
+    <label>
+      GitHub Access Token:
+      <input type="text" id="token">
+    </label>
+  </p>
 
-  <label>
-    GitHub Language Chart Type:
-    <select name="Language Chart Type" id="type">
-      <option value="doughnut">doughnut</option>
-      <option value="pie">pie</option>
-    </select>
-  </label>
+  <p>
+    <label>
+      GitHub Language Chart Type:
+      <select name="Language Chart Type" id="type">
+        <option value="doughnut">doughnut</option>
+        <option value="pie">pie</option>
+      </select>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Enable Top10 Languages Chart:
+      <input id="top10" type="checkbox"/>
+    </label>
+  </p>
 
   <br>
+
   <button type="button" id="save">Save</button>
 
   <script src="../scripts/options.js"></script>

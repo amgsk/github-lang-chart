@@ -1,3 +1,5 @@
+'use strict';
+
 const Language = require('./language');
 const _ = require('lodash');
 const Colors = require('./colors');

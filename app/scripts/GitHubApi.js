@@ -1,10 +1,12 @@
-module.exports = function() {
+"use strict";
 
+module.exports = function() {
+  const _urlBase = 'https://api.github.com';
   const _request = function(path, token, data){
     return new Promise(function (resolve, reject) {
       let req = new XMLHttpRequest();
 
-      req.open('GET', `https://api.github.com${path}`, true);
+      req.open('GET', `${_urlBase}${path}`, true);
       req.setRequestHeader('Accept','application/vnd.github.v3.raw+json');
       req.setRequestHeader('Content-Type','application/json;charset=UTF-8');
 
@@ -52,7 +54,27 @@ module.exports = function() {
       };
 
       return _request(`/users/${author}`, token).then(function(data) {
-        return getRepositories(token ,data);
+        return getRepositories(token, data);
+      });
+    },
+    getAuthorRepoLanguages: (token, urls) => {
+
+      let responses = [];
+      function recordValue(value) {
+        responses.push(value);
+      }
+
+      const getRepositories = function(token, urls) {
+
+        let requests = [];
+        urls.forEach((url) => {
+          let request_path = url.replace(_urlBase, '');
+          requests.push(_request(request_path, token, null).then(recordValue));
+        });
+        return Promise.all(requests);
+      };
+      return getRepositories(token, urls).then(() => {
+        return responses;
       });
     },
   };
