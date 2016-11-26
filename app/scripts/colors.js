@@ -1,4 +1,4 @@
-var Colors = function() {
+const Colors = function() {
   const colorMap = {
     "1c enterprise"            : "#814ccc",
     "abap"                     : "#e8274b",

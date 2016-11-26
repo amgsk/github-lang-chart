@@ -1,16 +1,16 @@
 'use strict';
 
-var Storage = require('./Storage');
-var GitHubApi = require('./GitHubApi');
-var util = require('./util');
-var LanguageChart = require('./LanguageChart');
+const Storage = require('./Storage');
+const GitHubApi = require('./GitHubApi');
+const util = require('./util');
+const LanguageChart = require('./LanguageChart');
 
 function init () {
 
   Storage.get(['GitHubLangChartToken', 'GitHubLangChartType']).then(function(items) {
 
-    var token = null;
-    var chartType = null;
+    let token = null;
+    let chartType = null;
 
     if (items) {
       token = items.GitHubLangChartToken ? items.GitHubLangChartToken : null;
@@ -19,7 +19,7 @@ function init () {
 
     GitHubApi.getAuthorRepositories(token, util.getTargetName())
       .then(function (repos) {
-        var author_repositories = Array.prototype.concat.apply([], repos);
+        let author_repositories = Array.prototype.concat.apply([], repos);
         LanguageChart.displayChart(chartType, author_repositories);
       })
       .catch(function (error) {

@@ -1,8 +1,8 @@
 module.exports = function() {
 
-  var _request = function(path, token, data){
+  const _request = function(path, token, data){
     return new Promise(function (resolve, reject) {
-      var req = new XMLHttpRequest();
+      let req = new XMLHttpRequest();
 
       req.open('GET', `https://api.github.com${path}`, true);
       req.setRequestHeader('Accept','application/vnd.github.v3.raw+json');
@@ -27,12 +27,12 @@ module.exports = function() {
   return {
     getAuthorRepositories: function(token ,author) {
 
-      var getRepository = function (token, author, page) {
-        var url = `/users/${author}/repos?page=${page}&per_page=100`;
+      const getRepository = function (token, author, page) {
+        let url = `/users/${author}/repos?page=${page}&per_page=100`;
         return _request(url, token, null);
       };
 
-      var getRepositories = function(token, info) {
+      const getRepositories = function(token, info) {
 
         if (info['public_repos'] === 0) {
           return Promise().resolve([]);
@@ -41,11 +41,11 @@ module.exports = function() {
         function recordValue(results, value) {
           return Array.prototype.concat.apply(results, value);
         }
-        var pushValue = recordValue.bind(null, []);
+        const pushValue = recordValue.bind(null, []);
 
-        var requests = [];
-        var require_request_count = Math.ceil(info['public_repos'] / 100);
-        for (var i = 0; i < require_request_count; i++) {
+        let requests = [];
+        let require_request_count = Math.ceil(info['public_repos'] / 100);
+        for (let i = 0; i < require_request_count; i++) {
           requests.push(getRepository(token, info["login"], i+1).then(pushValue));
         }
         return Promise.all(requests);

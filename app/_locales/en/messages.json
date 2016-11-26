@@ -1,14 +1,14 @@
 {
   "appName": {
-    "message": "github-lang-chart",
-    "description": "The name of the application"
+    "message": "GitHub Lang Chart",
+    "description": "This application is chrome extension to display the chart by language of the author repository on the Github author page."
   },
   "appShortName": {
-    "message": "github-lang-chart",
-    "description": "The short_name (maximum of 12 characters recommended) is a short version of the app's name."
+    "message": "Lang Chart",
+    "description": "This application is chrome extension to display the chart by language of the author repository on the Github author page."
   },
   "appDescription": {
-    "message": "This application is an extension to display the chart by language of the author repository on the Github dashboard.",
-    "description": "The description of the application"
+    "message": "This application is chrome extension to display the chart by language of the author repository on the Github author page.",
+    "description": "This application is chrome extension to display the chart by language of the author repository on the Github author page."
   }
 }

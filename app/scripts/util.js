@@ -1,7 +1,7 @@
-var util = function() {
+const util = function() {
 
-  var authorNameSelector = document.querySelector('.vcard-username');
-  var organizationSelector = document.querySelector('.org-name');
+  const authorNameSelector = document.querySelector('.vcard-username');
+  const organizationSelector = document.querySelector('.org-name');
 
   return {
     isChartTargetPage : function() {
