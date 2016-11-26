@@ -4,10 +4,18 @@
 
 ## Description
 
+**Chart1 : The language ratio used in all repositories.**
+
 This will display the language of the repository in the graph.
 The chart is displayed on the author's top page and is colored by language.
 
 ![Chart](http://i.imgur.com/JVQpFWI.jpg "Chart")
+
+**Chart2 : The language ratio used in all repositories.**
+This is a repository language chart sorted in descending order of the number of stars.
+*There is a mosaic in the image.*
+
+![Chart](http://i.imgur.com/izuUkPV.jpg "Chart")
 
 Issues
 ------
