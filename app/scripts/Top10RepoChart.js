@@ -2,6 +2,7 @@
 
 const _ = require('lodash');
 const ChartCanvas = require('./ChartCanvas');
+const util = require('./util');
 
 const Top10RepoChart = function() {
 
@@ -36,6 +37,14 @@ const Top10RepoChart = function() {
             yAxes: [{
               stacked: true
             }]
+          },
+          responsive: true,
+          onClick: function (event, legendItem) {
+            if (legendItem && legendItem.length > 0) {
+              let author = util.getTargetName();
+              let clickedLabel = legendItem[0]._model.label;
+              window.location.href = `https://github.com/${author}/${clickedLabel}`;
+            }
           }
         }
       });
