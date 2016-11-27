@@ -3,7 +3,7 @@
 const GitHubApi = require('./GitHubApi');
 const Colors = require('./colors');
 
-const Top10ChartModel = function(repoLangs) {
+const Top10RepoLanguagesModel = function(repoLangs) {
 
   const init = function(repoLangs) {
 
@@ -36,4 +36,4 @@ const Top10ChartModel = function(repoLangs) {
   return init.call(this, repoLangs);
 };
 
-module.exports = Top10ChartModel;
+module.exports = Top10RepoLanguagesModel;

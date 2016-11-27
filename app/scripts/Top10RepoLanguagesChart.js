@@ -3,9 +3,9 @@
 const util = require('./util');
 const GitHubApi = require('./GitHubApi');
 const ChartCanvas = require('./ChartCanvas');
-const Top10ChartModel = require('./Top10ChartModel');
+const Top10RepoLanguagesModel = require('./Top10RepoLanguagesModel');
 
-const Top10Chart = function() {
+const Top10RepoLanguagesChart = function() {
 
   return {
     displayChart : (token, author, repos) => {
@@ -15,7 +15,7 @@ const Top10Chart = function() {
       let request_urls = _.map(top10Repositories, 'languages_url');
 
       GitHubApi.getAuthorRepoLanguages(token, request_urls).then(function(repoLangs) {
-        let datasets = new Top10ChartModel(repoLangs);
+        let datasets = new Top10RepoLanguagesModel(repoLangs);
 
         let data = {
           labels: _.map(top10Repositories, 'name'),
@@ -42,4 +42,4 @@ const Top10Chart = function() {
   };
 }();
 
-module.exports = Top10Chart;
+module.exports = Top10RepoLanguagesChart;

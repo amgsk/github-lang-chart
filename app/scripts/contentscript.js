@@ -4,7 +4,8 @@ const Storage = require('./Storage');
 const GitHubApi = require('./GitHubApi');
 const util = require('./util');
 const LanguageChart = require('./LanguageChart');
-const Top10Chart = require('./Top10Chart');
+const Top10RepoLanguagesChart = require('./Top10RepoLanguagesChart');
+const Top10RepoChart = require('./Top10RepoChart');
 
 function init () {
 
@@ -21,8 +22,8 @@ function init () {
     }
 
     GitHubApi.getAuthorRepositories(token, util.getTargetName())
-      .then(function (repos) {
-        let author_repositories = Array.prototype.concat.apply([], repos);
+      .then(function (repositories) {
+        let author_repositories = Array.prototype.concat.apply([], repositories);
 
         // Show Language Count Chart
         LanguageChart.displayChart(chartType, author_repositories);
@@ -31,7 +32,10 @@ function init () {
         // It requires multiple requests and takes time to process.
         if (isShowTop10Chart) {
           // Show Top10 Chart
-          Top10Chart.displayChart(token, util.getTargetName(), author_repositories);
+          Top10RepoLanguagesChart.displayChart(token, util.getTargetName(), author_repositories);
+
+          // Show top10 chart
+          Top10RepoChart.displayChart(author_repositories);
         }
       })
       .catch(function (error) {
