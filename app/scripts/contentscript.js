@@ -28,14 +28,14 @@ function init () {
         // Show Language Count Chart
         LanguageChart.displayChart(chartType, author_repositories);
 
+        // Show top10 chart
+        Top10RepoChart.displayChart(author_repositories);
+
         // TODO: Experimental
         // It requires multiple requests and takes time to process.
         if (isShowTop10Chart) {
           // Show Top10 Chart
           Top10RepoLanguagesChart.displayChart(token, util.getTargetName(), author_repositories);
-
-          // Show top10 chart
-          Top10RepoChart.displayChart(author_repositories);
         }
       })
       .catch(function (error) {
