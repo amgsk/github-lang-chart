@@ -1,7 +1,7 @@
 {
   "name": "GitHub Lang Chart",
   "private": true,
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "This application is an extension to display the chart by language of the author repository on the Github dashboard.",
   "scripts": {
     "start": "npm run dev:chrome",
