@@ -37,6 +37,11 @@ To enable it, turn on the check on the setting page.
 Change Log
 ----------
 
+#### v0.1.6
+
+Add App Icons.
+There is no change in the source code.
+
 #### v0.1.5
 
 Fix display name of repository which language is not set.
@@ -59,3 +64,4 @@ Please refer to each project's style guidelines and guidelines for submitting pa
  5. Submit a **Pull request** so that we can review your changes
 
 NOTE: Be sure to merge the latest from "upstream" before making a pull request!
+
