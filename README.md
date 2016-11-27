@@ -1,4 +1,4 @@
-# Github Lang Chart
+# Github Lang Chart :chart_with_upwards_trend: 
 
 This application is chrome extension to display the chart by language of the author repository on the Github author page or organization page.
 
