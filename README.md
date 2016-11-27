@@ -34,6 +34,14 @@ To enable it, turn on the check on the setting page.
 
 ![Chart](http://i.imgur.com/gsDQG59.jpg "Chart")
 
+Change Log
+----------
+
+#### v0.1.5
+
+Fix display name of repository which language is not set.
+"Others" To "Unknown".
+
 Issues
 ------
 
