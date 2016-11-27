@@ -1,6 +1,6 @@
 class Language {
   constructor (language, count, color) {
-    this.language = language || "Others";
+    this.language = language || "Unknown";
     this.count = count || 0;
     this.color = color;
   }
