@@ -13,7 +13,14 @@ The chart is displayed on the author's top page and is colored by language.
 
 ![Chart](http://i.imgur.com/JVQpFWI.jpg "Chart")
 
-**Chart2 : Display the top 10 repositories of the author's repository.**
+**Chart2 : Top 10 charts of simple stars.**
+
+Display the top 10 repositories of the author sorted in descending order of the number of stars.  
+*There is a mosaic in the image.*
+
+![Chart](http://i.imgur.com/LzzCLuy.jpg "Chart")
+
+**Chart3 : Display the top 10 repositories of the author's repository.**
 
 This is a repository language chart sorted in descending order of the number of stars.  
 When this function is enabled, 10 requests are required and the access restriction may become faster.  
