@@ -32,6 +32,8 @@ When this function is enabled, 10 requests are required and the access restricti
 This function is OFF by default.  
 To enable it, turn on the check on the setting page.
 
+![Imgur](http://i.imgur.com/gsDQG59.jpg?1)
+
 Usege
 -----
 The chart will be displayed on the Github page of the author or organization.
