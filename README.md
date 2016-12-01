@@ -34,6 +34,19 @@ To enable it, turn on the check on the setting page.
 
 ![Chart](http://i.imgur.com/gsDQG59.jpg "Chart")
 
+Usege
+-----
+The chart will be displayed on the Github page of the author or organization.
+
+#### When setting a token (recommended)
+
+Set the generated token to the setting page.
+If this is not set, Github's access restrictions may be applied early.
+
+*Settings > Personal access tokens > new*
+
+![Chart](http://i.imgur.com/t96kyc6.png "Chart")
+
 Change Log
 ----------
 
